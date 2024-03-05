@@ -3,6 +3,7 @@ import styles from './Navbar.module.scss'
 import logo from '../assets/logo.png'
 import cart_icon from '../assets/cart_icon.png'
 import {Link} from "react-router-dom";
+import {ShopContext} from "../../Context/ShopContext.jsx";
 
 
 const menuItems = ['Shop', 'Men', 'Women', 'Kids']
@@ -14,7 +15,7 @@ const chosePath = (index) => {
 
 export const Navbar = () => {
 	const [menu, setMenu] = React.useState('Shop')
-
+	const {getTotalCardItems} = React.useContext(ShopContext)
 
 	return (
 		<div className={styles.navbar}>
@@ -32,7 +33,7 @@ export const Navbar = () => {
 				))}
 			</ul>
 
-			{/* Login panel */}
+			{/* Login Panel */}
 			<div className={styles.navLoginCart}>
 				<Link to='/login'>
 					<button>Login</button>
@@ -40,9 +41,7 @@ export const Navbar = () => {
 				<Link to='/cart'>
 					<img src={cart_icon} alt="cart icon"/>
 				</Link>
-				<div className={styles.navCartCount}>
-
-				</div>
+				<div className={styles.navCartCount}>{getTotalCardItems()}</div>
 			</div>
 		</div>
 	)
