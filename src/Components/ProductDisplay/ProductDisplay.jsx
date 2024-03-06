@@ -4,12 +4,20 @@ import star_dull from '../assets/star_dull_icon.png'
 import React from "react";
 import {ShopContext} from "../../Context/ShopContext.jsx";
 
+const sizes = ['S', 'M', 'L', 'XL','XXL']
+
 export const ProductDisplay = (props) => {
 	const {product} = props
 	const {addToCart} = React.useContext(ShopContext)
+	const [isActiveSize, setIsActiveSize] = React.useState('S')
+
+	const addToCartProduct = () => {
+		addToCart(product.id, isActiveSize);
+	};
 
 	return (
 		<div className={styles.productDisplay}>
+			
 			{/* Display Left  */}
 			<div className={styles.displayLeft}>
 				<div className={styles.imgList}>
@@ -51,14 +59,12 @@ export const ProductDisplay = (props) => {
 				<div className={styles.rightSize}>
 					<h1>Select Size</h1>
 					<div className={styles.rightSizes}>
-						<div>S</div>
-						<div>M</div>
-						<div>L</div>
-						<div>XL</div>
-						<div>XXL</div>
+						{sizes.map((size, i) => (
+							<div key={i} onClick={() => setIsActiveSize(size)} className={`${size === isActiveSize ? styles.activeProduct : ''}`}>{size}</div>
+						))}
 					</div>
 				</div>
-				<button onClick={() => addToCart(product.id)}>ADD TO CART</button>
+				<button onClick={() => addToCartProduct()}>ADD TO CART</button>
 				<p className={styles.rightCategory}>
 					<span>Category: </span> Women, T-Shirt, Crop Top
 				</p>

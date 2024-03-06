@@ -5,7 +5,7 @@ import remove from '../assets/cart_cross_icon.png'
 
 
 export const CartItems = () => {
-	const {all_product, cartItems, removeFromCart, getTotalCartAmount} = React.useContext(ShopContext)
+	const {cartItems, removeFromCart, getTotalCartAmount} = React.useContext(ShopContext)
 
 	return (
 		<div className={styles.cartItems}>
@@ -14,14 +14,14 @@ export const CartItems = () => {
 				<p>Title</p>
 				<p>Price</p>
 				<p>Quantity</p>
+				<p>Size</p>
 				<p>Total</p>
 				<p>Remove</p>
 			</div>
 			<hr/>
 
 			{/* Cart Item */}
-			{localStorage.getItem('localItems') &&
-				JSON.parse(localStorage.getItem('localItems')).map((item, i) => {
+			{cartItems.map((item, i) => {
 				if (item.count > 0) {
 					return (
 						<div key={i}>
@@ -30,8 +30,10 @@ export const CartItems = () => {
 								<p>{item.name}</p>
 								<p>${item.new_price}</p>
 								<button className={styles.quantity} type='button'>{item.count}</button>
+								<p>{item.size}</p>
 								<p>${item.new_price * item.count}</p>
-								<img className={styles.removeIcon} onClick={() => removeFromCart(item.id)} src={remove} alt="remove icon"/>
+								<img className={styles.removeIcon} onClick={() => removeFromCart(item.id, item.size)} src={remove}
+										 alt="remove icon"/>
 							</div>
 							<hr/>
 						</div>
@@ -40,29 +42,10 @@ export const CartItems = () => {
 				return null
 			})}
 
-			{/*{all_product.map((e, index) => {*/}
-			{/*		if (localStorage.getItem('localItems')[e.id] > 0) {*/}
-			{/*			return (*/}
-			{/*				<div key={index}>*/}
-			{/*					<div className={`${styles.format} ${styles.formatMain}`}>*/}
-			{/*						<img className={styles.productIcon} src={e.image} alt='element image'/>*/}
-			{/*						<p>{e.name}</p>*/}
-			{/*						<p>${e.new_price}</p>*/}
-			{/*						<button className={styles.quantity} type='button'>{cartItems[e.id]}</button>*/}
-			{/*						<p>${e.new_price * cartItems[e.id]}</p>*/}
-			{/*						<img className={styles.removeIcon} onClick={() => removeFromCart(e.id)} src={remove} alt="remove icon"/>*/}
-			{/*					</div>*/}
-			{/*					<hr/>*/}
-			{/*				</div>*/}
-			{/*			)*/}
-			{/*		}*/}
-			{/*	return null*/}
-			{/*})}*/}
-
 			{/* Total Section */}
 			<div className={styles.down}>
 				<div className={styles.total}>
-					<h1>cart Totals</h1>
+					<h1>Cart Totals</h1>
 					<div>
 						<div className={styles.totalItem}>
 							<p>Subtotal</p>
@@ -81,7 +64,8 @@ export const CartItems = () => {
 					</div>
 					<button>PROCEED TO CHECKOUT</button>
 				</div>
-			{/*	Promo Code */}
+
+				{/*	Promo Code */}
 				<div className={styles.promoCode}>
 					<p>If you have a promo code, Enter it here</p>
 					<div className={styles.promoBox}>

@@ -4,127 +4,59 @@ import all_product from "../Components/assets/all_product.js";
 
 export const ShopContext = createContext(null)
 
-const getDefaultCart = () => {
-	let cart = {}
-	for (let i = 0; i < all_product.length + 1; i++) {
-		cart[i] = 0
-	}
-	return cart
-}
-
 const ShopContextProvider = (props) => {
-	const [cartItems, setCartItems] = React.useState(getDefaultCart())
+	const [cartItems, setCartItems] = React.useState(localStorage.getItem('localItems') ? JSON.parse(localStorage.getItem('localItems')) : [])
 
-	const addToCart = (itemId) => {
-		setCartItems((prev) => (
-			{
-				...prev,
-				[itemId]: prev[itemId] + 1
-			}
-		))
 
-		if (!localStorage.getItem('localItems')) {
-			localStorage.setItem('localItems', JSON.stringify([{...all_product[itemId - 1], count: 1}]))
+	const addToCart = (itemId, size) => {
+		const productItem = {...all_product.find(item => item.id === itemId), size, count: 1}
+		let actualLocalItems = localStorage.getItem('localItems') ? JSON.parse(localStorage.getItem('localItems')) : [{
+			...all_product.find(item => item.id === itemId),
+			size,
+			count: 0
+		}]
+		let existingItemIndex = actualLocalItems.findIndex(obj => obj.id === itemId && obj.size === size)
+
+
+		if (existingItemIndex !== -1) {
+			actualLocalItems[existingItemIndex].count += 1
+		} else if (actualLocalItems.some(obj => obj.id === itemId && obj.size !== size)) {
+			actualLocalItems.push(productItem);
 		} else {
-			let localItems = JSON.parse(localStorage.getItem('localItems'))
-
-			const obj = localItems.find(item => item.id === itemId)
-
-			if (obj) {
-				localItems.map(item => {
-					if (item.id === itemId) {
-						item.count += 1
-						localStorage.setItem('localItems', JSON.stringify(localItems))
-					}
-				})
-			} else {
-				localItems = [...localItems, {...all_product[itemId - 1], count: 1}]
-				localStorage.setItem('localItems', JSON.stringify(localItems))
-			}
-
-			// localItems.find(item => {
-			// 	if (item.id === itemId) {
-			// 		localItems.map(item => {
-			// 			item.count += 1
-			// 			localStorage.setItem('localItems', JSON.stringify(localItems))
-			// 			flag = true
-			// 		})
-			// 	}
-			// 	if (flag === false) {
-			// 		localItems = [...localItems, {...all_product[item - 1], count: 1}]
-			// 		localStorage.setItem('localItems', JSON.stringify(localItems))
-			// 	}
-			// })
-
-
-			// if (JSON.parse(localStorage.getItem('localItems')).find(item => item.id === itemId)) {
-			// 	let localItems = JSON.parse(localStorage.getItem('localItems'))
-			// 	localItems.map(item => {
-			// 		console.log(item[itemId])
-			// 		item.count += 1
-			// 		localStorage.setItem('localItems', JSON.stringify(localItems))
-			// 	})
-			// } else {
-			// 	let localItems = JSON.parse(localStorage.getItem('localItems'))
-			// 	localItems = [...localItems, {...all_product[itemId - 1], count: 1}]
-			// 	localStorage.setItem('localItems', JSON.stringify(localItems))
-			// }
+			actualLocalItems.push(productItem)
 		}
+
+		setCartItems(actualLocalItems)
+		return localStorage.setItem('localItems', JSON.stringify(actualLocalItems))
 	}
 
-	const removeFromCart = (itemId) => {
-		setCartItems((prev) => (
-			{
-				...prev,
-				[itemId]: prev[itemId] - 1
-			}
-		))
-
-		let localItems = JSON.parse(localStorage.getItem('localItems'))
-		let obj = localItems.find(item => item.id === itemId)
-
-		if (obj.count > 0) {
-			localItems.map(item => {
-				if (item.id === itemId) {
-					if (item.count > 0) {
-						item.count -= 1
-					}
-				}
-			})
+	const removeFromCart = (itemId, size) => {
+		let actualLocalItems = JSON.parse(localStorage.getItem('localItems'))
+		const existingItemIndex = actualLocalItems.findIndex(item => item.id === itemId && item.size === size)
+		console.log(existingItemIndex)
+		if (actualLocalItems[existingItemIndex].count > 0) {
+			actualLocalItems[existingItemIndex].count -= 1
 		}
-		if (obj.count === 0 ) {
-			localItems = localItems.filter(item => item.id !== itemId)
+		if (actualLocalItems[existingItemIndex].count === 0) {
+			actualLocalItems.splice(existingItemIndex, 1)
 		}
-
-		localStorage.setItem('localItems', JSON.stringify(localItems))
+		localStorage.setItem('localItems', JSON.stringify(actualLocalItems))
+		setCartItems(actualLocalItems)
 	}
 
 	const getTotalCartAmount = () => {
 		let totalAmount = 0;
 
 		for (const item in cartItems) {
-			if (cartItems[item] > 0) {
-				let itemInfo = all_product.find((product) => product.id === Number(item))
-				totalAmount += itemInfo.new_price * cartItems[item]
+			if (cartItems[item].count > 0) {
+				totalAmount += cartItems[item].new_price * cartItems[item].count
 			}
 		}
 		return totalAmount
 	}
 
 	const getTotalCardItems = () => {
-		let totalItems = 0
-
-		// for (const item in cartItems) {
-		// 	if (cartItems[item] > 0) {
-		// 		totalItems += cartItems[item]
-		// 	}
-		// }
-		// return totalItems
-		if (localStorage.getItem('localItems')) {
-			totalItems = JSON.parse(localStorage.getItem('localItems')).length
-		}
-
-		return totalItems
+		return cartItems.length > 0 ? cartItems.length : 0
 	}
 
 	const contextValue = {
@@ -140,7 +72,6 @@ const ShopContextProvider = (props) => {
 			{props.children}
 		</ShopContext.Provider>
 	)
-
 }
 
 export default ShopContextProvider;

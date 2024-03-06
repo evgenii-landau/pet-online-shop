@@ -82,6 +82,10 @@
   cursor: pointer;
 }
 
+.activeProduct {
+  box-shadow: 0px 0px 3px 0px;
+}
+
 .displayRight button {
   padding: 20px 40px;
   width: 200px;
@@ -102,6 +106,3 @@
 .rightCategory span {
   font-weight: bold;
 }
-
-
-// СДЕЛАЛ КРОШКИ И СТРАНИЦУ ПРОДУКТА !!!!
