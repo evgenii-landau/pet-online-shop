@@ -7,7 +7,7 @@ export const NewsLetter = () => {
 			<p>Subscribe to uor newletter and stay updated</p>
 			<div>
 				<input type="email" placeholder='Your Email id'/>
-				<button>Subscribe</button>
+				<button className={styles.subscribeBtn}>Subscribe</button>
 			</div>
 		</div>
 	)

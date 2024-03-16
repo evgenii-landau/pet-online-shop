@@ -1,6 +1,7 @@
 .navbar {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   padding: 16px;
   box-shadow: 0 1px 3px -2px black;
 }
@@ -11,6 +12,11 @@
   gap: 10px;
 }
 
+.img {
+
+  object-fit: cover;
+}
+
 .navLogo p {
   color: #171717;
   font-size: 38px;
@@ -18,6 +24,7 @@
 }
 
 .navMenu {
+  padding: 10px 35px;
   display: flex;
   align-items: center;
   list-style: none;
@@ -25,7 +32,15 @@
   color: #626262;
   font-size: 20px;
   font-weight: 500;
+
+  background-color: rgba(49, 49, 49);
+  height: 30px;
+  justify-content: space-around;
+  border-radius: 30px;
+  box-shadow: rgba(49, 49, 49) 0px 5px 15px,
+  rgba(49, 49, 49, 1) 5px 10px 15px;
 }
+
 
 .navMenu li {
   display: flex;
@@ -34,6 +49,11 @@
   justify-content: center;
   gap: 3px;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
 }
 
 .navMenu hr {
@@ -41,7 +61,11 @@
   width: 80%;
   height: 3px;
   border-radius: 10px;
-  background: #FF4141;
+  background: #212121;
+}
+
+.menuLink {
+  color: #FF7235;
 }
 
 .navLoginCart {
@@ -50,21 +74,107 @@
   gap: 45px
 }
 
-.navLoginCart button {
+.loginBtn {
   width: 157px;
   height: 58px;
   outline: none;
-  border: 1px solid #7a7a7a;
   border-radius: 75px;
-  color: #515151;
   font-size: 20px;
   font-weight: 500;
-  background-color: white;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  padding: 1em 1.8em;
+  border: 1px solid #303030;
+  background: rgba(49, 49, 49);
+  color: #FF7235;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  overflow: hidden;
+  transition: 0.2s;
 }
 
-.navLoginCart button:active {
-  background: #f3f3f3;
+.loginBtn:hover {
+  box-shadow: 0 0 10px #FF7235, 0 0 25px red, 0 0 50px #FF7235;
+  transition-delay: 0.1s;
+}
+
+.loginBtn span {
+  position: absolute;
+}
+
+.loginBtn span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #FF7235);
+}
+
+.loginBtn:hover span:nth-child(1) {
+  left: 100%;
+  transition: 0.7s;
+}
+
+.loginBtn span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, red);
+}
+
+.loginBtn:hover span:nth-child(3) {
+  right: 100%;
+  transition: 0.7s;
+  transition-delay: 0.35s;
+}
+
+.loginBtn span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #FF7235);
+}
+
+.loginBtn:hover span:nth-child(2) {
+  top: 100%;
+  transition: 0.7s;
+  transition-delay: 0.17s;
+}
+
+.loginBtn span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, red);
+}
+
+.loginBtn:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 0.7s;
+  transition-delay: 0.52s;
+}
+
+.loginBtn:active {
+  background: #ae00af;
+  background: linear-gradient(to top right, #ae00af, red);
+  color: #bfbfbf;
+  box-shadow: 0 0 8px #FF7235, 0 0 8px red, 0 0 8px #FF7235;
+  transition: 0.1s;
+}
+
+.loginBtn:active span:nth-child(1)
+span:nth-child(2)
+span:nth-child(2)
+span:nth-child(2) {
+  transition: none;
+  transition-delay: none;
 }
 
 .navCartCount {

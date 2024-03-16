@@ -1,5 +1,5 @@
 import styles from './Footer.module.scss'
-import footer_logo from '../assets/logo_big.png'
+import logo from '../assets/logo.png'
 import instagram from '../assets/instagram_icon.png'
 import pintester from '../assets/pintester_icon.png'
 import whatsapp from '../assets/whatsapp_icon.png'
@@ -13,8 +13,8 @@ export const Footer = () => {
 		<div className={styles.footer}>
 
 			<div className={styles.footerLogo}>
-				<img src={footer_logo} alt="logo"/>
-				<p>ONLINE SHOP</p>
+				<img className={styles.img} src={logo} alt="logo" width={250} height={100}/>
+				<p>INSIDE FASHION</p>
 			</div>
 
 			<ul className={styles.links}>

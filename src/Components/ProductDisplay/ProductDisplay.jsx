@@ -17,7 +17,7 @@ export const ProductDisplay = (props) => {
 
 	return (
 		<div className={styles.productDisplay}>
-			
+
 			{/* Display Left  */}
 			<div className={styles.displayLeft}>
 				<div className={styles.imgList}>

@@ -10,16 +10,21 @@
   margin-bottom: 150px;
   background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
   gap: 30px;
+
+  background-color: #313131;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+  background-size: 30px 30px;
+  background-position: -5px -5px
 }
 
 .newsLetter h1 {
-  color: #454545;
+  color: #d0d0d0;;
   font-size: 55px;
   font-weight: 600;
 }
 
 .newsLetter p {
-  color: #454545;
+  color: #d0d0d0;;
   font-size: 20xp;
 }
 
