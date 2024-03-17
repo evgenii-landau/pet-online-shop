@@ -58,7 +58,7 @@ export const Navbar = () => {
 						<img src={close_btn} alt="close button" width={24} height={24}/>
 					</button>
 					<div className={styles.wrapperBurgerLogin}>
-					<Link to='/login'>
+					<Link to='/login' onClick={() => setIsOpenBurger(prev => !prev)}>
 								<button className={styles.burgerLoginBtn}>Login</button>
 							</Link>
 							<Link to='/cart' onClick={() => setIsOpenBurger(prev => !prev)}>

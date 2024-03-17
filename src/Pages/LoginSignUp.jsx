@@ -12,7 +12,7 @@ export const LoginSignUp = () => {
 					<input type="email" placeholder='Email Adress'/>
 					<input type="password" placeholder='Password'/>
 				</div>
-				<button type='button'>Continue</button>
+				<button className={styles.continueButton} type='button'>Continue</button>
 				<p className={styles.login}>Already have an account?</p> <span>Login here</span>
 				<div className={styles.agree}>
 					<input type="checkbox" name='' id=''/>
