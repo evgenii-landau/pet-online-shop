@@ -9,7 +9,13 @@
   background-color: #313131;
   background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
   background-size: 30px 30px;
-  background-position: -5px -5px
+  background-position: -5px -5px;
+
+  @media screen and (max-width: 1024px) {
+    width: auto;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .offersLeft {
@@ -17,18 +23,39 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+
+  @media screen and (max-width: 1024px) {
+    text-align: center;
+    align-items: center;
+  }
 }
 
 .offersLeft h1 {
   color: #d0d0d0;;
   font-size: 80px;
   font-weight: 800;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 70px;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 60px;
+  }
 }
 
 .offersLeft p {
   color: #d0d0d0;;
   font-size: 22px;
   font-weight: 600;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 17px;
+  }
 }
 
 .offersBtn {
@@ -53,6 +80,14 @@
   letter-spacing: 2px;
   overflow: hidden;
   transition: 0.2s;
+  
+  @media screen and (max-width: 1024px) {
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 15px;
+  }
 }
 
 .offersBtn:hover {
