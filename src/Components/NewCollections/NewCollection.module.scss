@@ -10,6 +10,14 @@
   color: #171717;
   font-size: 50px;
   font-weight: 600;
+
+  @media screen and (max-width: 600px) {
+    font-size: 40px;
+  }
+
+  @media screen and (max-width: 375px) {
+    font-size: 35px;
+  }
 }
 
 .newCollections hr {
@@ -24,4 +32,16 @@
   grid-template-columns: repeat(4, 1fr);
   margin-top: 50px;
   gap: 30px;
+
+  @media screen and (max-width: 1500px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: 1150px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
