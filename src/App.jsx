@@ -28,7 +28,7 @@ function App() {
 					{/*<Route path='cart' element={<Cart/>}/>*/}
 					{/*<Route path='login' element={<LoginSignUp/>}/>*/}
 				</Routes>
-				{/*<Footer/>*/}
+				<Footer/>
 			</BrowserRouter>
 		</>
 	)

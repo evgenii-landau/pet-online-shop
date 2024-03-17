@@ -20,14 +20,24 @@
   color: #383838;
   font-size: 46px;
   font-weight: 700;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .links {
+  padding: 0;
   display: flex;
   list-style: none;
   gap: 50px;
   color: #252525;
   font-size: 20px;
+  
+  @media screen and (max-width: 600px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .links li {
@@ -55,6 +65,7 @@
   margin-bottom: 30px;
   color: #1a1a1a;
   font-size: 20px;
+  text-align: center;
 }
 
 .copyright hr {
