@@ -6,7 +6,12 @@
   background-color: #313131;
   background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
   background-size: 30px 30px;
-  background-position: -5px -5px
+  background-position: -5px -5px;
+
+  @media screen and (max-width: 1300px) {
+    flex-direction: column;
+    padding: 40px 0;
+  }
 }
 
 .heroLeft {
@@ -17,18 +22,42 @@
   gap: 20px;
   padding-left: 180px;
   line-height: 1.1;
+  
+  @media screen and (max-width: 1024px) {
+    padding-left: 100px;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding-left: 30px;
+  }
 }
 
 .heroLeft h2 {
   font-size: 26px;
   font-weight: 600;
   color: #d0d0d0;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 17px;
+  }
 }
 
 .heroLeft p {
   color: #d0d0d0;
   font-size: 100px;
   font-weight: 700;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 70px;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 60px;
+  }
 }
 
 .handIcon {
@@ -63,6 +92,14 @@
   overflow: hidden;
   transition: 0.2s;
   cursor: pointer;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 15px;
+  }
 }
 
 .heroLatestBtn:hover {
@@ -150,4 +187,11 @@ span:nth-child(2) {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
+
+

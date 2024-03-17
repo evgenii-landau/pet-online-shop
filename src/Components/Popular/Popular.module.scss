@@ -10,6 +10,14 @@
   color: #171717;
   font-size: 50px;
   font-weight: 600;
+
+  @media screen and (max-width: 600px) {
+    font-size: 40px;
+  }
+
+  @media screen and (max-width: 375px) {
+    font-size: 35px;
+  }
 }
 
 .popular hr {
@@ -20,7 +28,11 @@
 }
 
 .popularItem {
+  padding: 0 15px;
   margin-top: 50px;
   display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-items: center;
   gap: 30px;
 }

@@ -30,6 +30,7 @@
   margin: 20px 170px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
   row-gap: 80px;
 }
 
