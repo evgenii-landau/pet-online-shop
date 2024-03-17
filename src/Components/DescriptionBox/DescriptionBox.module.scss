@@ -1,5 +1,9 @@
 .descriptionBox {
   margin: 120px 170px;
+  
+  @media screen and (max-width: 1330px) {
+    margin: 20px 20px;
+  }
 }
 
 .navigator {
