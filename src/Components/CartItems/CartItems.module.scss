@@ -1,5 +1,9 @@
 .cartItems {
   margin: 100px 170px;
+  
+  @media screen and (max-width: 1500px) {
+    margin: 20px 20px;
+  }
 }
 
 .cartItems hr {
@@ -17,11 +21,41 @@
   color: #454545;
   font-size: 18px;
   font-weight: 600;
+
+  @media screen and (max-width: 1500px) {
+    gap: 30px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    gap: 10px;
+    justify-items: center;
+  }
+}
+
+.grid {
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+.productName {
+  @media screen and (max-width: 1024px) {
+    grid-area: 2 / 1 / 3 / -1;
+    text-align: center;
+  }
 }
 
 .format {
   font-size: 17px;
   font-weight: 500;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 }
 
 .productIcon {
@@ -32,6 +66,10 @@
   width: 15px;
   margin: 0 40px;
   cursor: pointer;
+
+  @media screen and (max-width: 1024px) {
+    margin: 0 20px;
+  }
 }
 
 .quantity {
@@ -44,6 +82,11 @@
 .down {
   display: flex;
   margin: 100px 0;
+
+  @media screen and (max-width: 1300px) {
+    flex-direction: column;
+    margin: 20px 0;
+  }
 }
 
 .total {
@@ -52,6 +95,10 @@
   flex-direction: column;
   margin-right: 200px;
   gap: 40px;
+
+  @media screen and (max-width: 1300px) {
+    margin-bottom: 20px;
+  }
 }
 
 .totalItem {
@@ -173,11 +220,17 @@ span:nth-child(2) {
 }
 
 .promoBox {
-  width: 504px;
+  max-width: 504px;
+  //width: 100%;
   margin-top: 15px;
   padding-left: 20px;
   height: 58px;
   background: #eaeaea;
+  margin-bottom: 50px;
+  
+  @media screen and (max-width: 768px) {
+    display: flex;
+  }
 }
 
 .promoBox input {

@@ -61,7 +61,7 @@ export const Navbar = () => {
 					<Link to='/login'>
 								<button className={styles.burgerLoginBtn}>Login</button>
 							</Link>
-							<Link to='/cart'>
+							<Link to='/cart' onClick={() => setIsOpenBurger(prev => !prev)}>
 								<img src={cart_icon} alt="cart icon" width={50} height={50}/>
 							</Link>
 							<div className={styles.navCartCountBurger}>{getTotalCardItems()}</div>

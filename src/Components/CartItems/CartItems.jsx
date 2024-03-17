@@ -9,7 +9,7 @@ export const CartItems = () => {
 
 	return (
 		<div className={styles.cartItems}>
-			<div className={styles.formatMain}>
+			<div className={`${styles.formatMain} ${styles.grid}`}>
 				<p>Products</p>
 				<p>Title</p>
 				<p>Price</p>
@@ -26,8 +26,8 @@ export const CartItems = () => {
 					return (
 						<div key={i}>
 							<div className={`${styles.format} ${styles.formatMain}`}>
-								<img className={styles.productIcon} src={item.image} alt='element image'/>
-								<p>{item.name}</p>
+								<img className={styles.productIcon} src={item.image} alt='product image'/>
+								<p className={styles.productName}>{item.name}</p>
 								<p>${item.new_price}</p>
 								<button className={styles.quantity} type='button'>{item.count}</button>
 								<p>{item.size}</p>
