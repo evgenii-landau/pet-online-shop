@@ -10,7 +10,7 @@ import {ShopContext} from "../../Context/ShopContext.jsx";
 const menuItems = ['Shop', 'Men', 'Women', 'Kids']
 
 const chosePath = (index) => {
-	const path = ['/pet-online-shop', '/mens', '/womens', '/kids']
+	const path = ['/', '/mens', '/womens', '/kids']
 	return path[index]
 }
 
@@ -22,7 +22,7 @@ export const Navbar = () => {
 		<div className={styles.navbar}>
 
 			{/* Logo */}
-			<Link className={styles.navLogo} to='/pet-online-shop'>
+			<Link className={styles.navLogo} to='/'>
 				<img className={styles.img} src={logo} alt="logo" width={250} height={100}/>
 				<p>Inside Fashion</p>
 			</Link>

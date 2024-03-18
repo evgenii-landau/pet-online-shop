@@ -64,7 +64,7 @@ export const ProductDisplay = (props) => {
 						))}
 					</div>
 				</div>
-				<button onClick={() => addToCartProduct()}>ADD TO CART</button>
+				<button className={styles.addButton} onClick={() => addToCartProduct()}>ADD TO CART</button>
 				<p className={styles.rightCategory}>
 					<span>Category: </span> Women, T-Shirt, Crop Top
 				</p>

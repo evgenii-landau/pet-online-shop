@@ -137,7 +137,7 @@ let all_product = [
     name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
     category: "men",
     image: p13_img,
-    new_price: 85.0,
+    new_price: 60.0,
     old_price: 120.5,
   },
   {
@@ -145,7 +145,7 @@ let all_product = [
     name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
     category: "men",
     image: p14_img,
-    new_price: 85.0,
+    new_price: 72.0,
     old_price: 120.5,
   },
   {
@@ -153,7 +153,7 @@ let all_product = [
     name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
     category: "men",
     image: p15_img,
-    new_price: 85.0,
+    new_price: 94.0,
     old_price: 120.5,
   },
   {
@@ -161,7 +161,7 @@ let all_product = [
     name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
     category: "men",
     image: p16_img,
-    new_price: 85.0,
+    new_price: 100.0,
     old_price: 120.5,
   },
   {
@@ -177,7 +177,7 @@ let all_product = [
     name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
     category: "men",
     image: p18_img,
-    new_price: 85.0,
+    new_price: 90.0,
     old_price: 120.5,
   },
   {
@@ -193,7 +193,7 @@ let all_product = [
     name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
     category: "men",
     image: p20_img,
-    new_price: 85.0,
+    new_price: 80.0,
     old_price: 120.5,
   },
   {
@@ -201,7 +201,7 @@ let all_product = [
     name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
     category: "men",
     image: p21_img,
-    new_price: 85.0,
+    new_price: 67.0,
     old_price: 120.5,
   },
   {
@@ -217,7 +217,7 @@ let all_product = [
     name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
     category: "men",
     image: p23_img,
-    new_price: 85.0,
+    new_price: 94.0,
     old_price: 120.5,
   },
   {
@@ -225,7 +225,7 @@ let all_product = [
     name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
     category: "men",
     image: p24_img,
-    new_price: 85.0,
+    new_price: 48.0,
     old_price: 120.5,
   },
   {
@@ -233,7 +233,7 @@ let all_product = [
     name: "Boys Orange Colourblocked Hooded Sweatshirt",
     category: "kid",
     image: p25_img,
-    new_price: 85.0,
+    new_price: 95.0,
     old_price: 120.5,
   },
   {
@@ -241,7 +241,7 @@ let all_product = [
     name: "Boys Orange Colourblocked Hooded Sweatshirt",
     category: "kid",
     image: p26_img,
-    new_price: 85.0,
+    new_price: 76.0,
     old_price: 120.5,
   },
   {
@@ -249,7 +249,7 @@ let all_product = [
     name: "Boys Orange Colourblocked Hooded Sweatshirt",
     category: "kid",
     image: p27_img,
-    new_price: 85.0,
+    new_price: 56.0,
     old_price: 120.5,
   },
   {
@@ -257,7 +257,7 @@ let all_product = [
     name: "Boys Orange Colourblocked Hooded Sweatshirt",
     category: "kid",
     image: p28_img,
-    new_price: 85.0,
+    new_price: 65.0,
     old_price: 120.5,
   },
   {
@@ -273,7 +273,7 @@ let all_product = [
     name: "Boys Orange Colourblocked Hooded Sweatshirt",
     category: "kid",
     image: p30_img,
-    new_price: 85.0,
+    new_price: 90.0,
     old_price: 120.5,
   },
   {
@@ -281,7 +281,7 @@ let all_product = [
     name: "Boys Orange Colourblocked Hooded Sweatshirt",
     category: "kid",
     image: p31_img,
-    new_price: 85.0,
+    new_price: 74.0,
     old_price: 120.5,
   },
   {
@@ -289,7 +289,7 @@ let all_product = [
     name: "Boys Orange Colourblocked Hooded Sweatshirt",
     category: "kid",
     image: p32_img,
-    new_price: 85.0,
+    new_price: 98.0,
     old_price: 120.5,
   },
   {
@@ -297,7 +297,7 @@ let all_product = [
     name: "Boys Orange Colourblocked Hooded Sweatshirt",
     category: "kid",
     image: p33_img,
-    new_price: 85.0,
+    new_price: 52.0,
     old_price: 120.5,
   },
   {
@@ -305,7 +305,7 @@ let all_product = [
     name: "Boys Orange Colourblocked Hooded Sweatshirt",
     category: "kid",
     image: p34_img,
-    new_price: 85.0,
+    new_price: 92.0,
     old_price: 120.5,
   },
   {
@@ -313,7 +313,7 @@ let all_product = [
     name: "Boys Orange Colourblocked Hooded Sweatshirt",
     category: "kid",
     image: p35_img,
-    new_price: 85.0,
+    new_price: 76.0,
     old_price: 120.5,
   },
   {

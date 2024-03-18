@@ -59,6 +59,17 @@ const ShopContextProvider = (props) => {
 		return cartItems.length > 0 ? cartItems.length : 0
 	}
 
+	const sortedCategory = (category) => {
+		switch (category) {
+			case 'Price up':
+				all_product.sort((a, b) => a.new_price - b.new_price)
+				break
+			case 'Price down':
+				all_product.sort((a, b) => b.new_price - a.new_price)
+				break
+		}
+	}
+
 	const contextValue = {
 		all_product,
 		cartItems,
@@ -66,6 +77,7 @@ const ShopContextProvider = (props) => {
 		removeFromCart,
 		getTotalCartAmount,
 		getTotalCardItems,
+		sortedCategory
 	}
 	return (
 		<ShopContext.Provider value={contextValue}>
